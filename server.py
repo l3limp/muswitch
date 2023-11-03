@@ -5,8 +5,8 @@ import ytm
 app = Flask('app')
 
 @app.route('/')
-def hello_world():
-  return 'Hello, World!'
+def siu():
+  return 'messi obv'
 
 @app.route('/createNew')
 def createNew():
