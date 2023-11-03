@@ -3,13 +3,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.oauth2 import SpotifyClientCredentials
 from urllib.parse import quote
-from dataclasses import dataclass
+import utils
 
-
-@dataclass
-class Song:
-    artist: str
-    title: str
 
 os.environ["SPOTIPY_REDIRECT_URI"] = "http://localhost:8080"
 os.environ["SPOTIPY_CLIENT_ID"] = "c85c86b5bcd44d998917d4be40ffa6ac"
@@ -19,10 +14,15 @@ def getTracks(playlistID):
     uri = f"spotify:playlist:{playlistID}"
     spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
     results = spotify.playlist(uri)
-    songs = results["tracks"]['items']
     tracks = []
-    for song in songs:
-        tracks.append(song['track']['uri'])
+    i = 1
+    for track in results["tracks"]['items']:
+        spot_title = track['track']['name']
+        spot_artist = track['track']['artists'][0]['name']
+        song = utils.clean_song_info(utils.Song(spot_artist, spot_title))
+        print(f'{i} {song}')
+        i+=1
+        tracks.append(song)
     return tracks
 
 def createPlaylist(tracks, newPlaylistName):
@@ -42,3 +42,5 @@ def createPlaylist(tracks, newPlaylistName):
             uris.append(tracks_found['tracks']['items'][0]['uri']) 
     sp.playlist_add_items(playlist_id, uris)
     return share_link
+
+# getTracks("2KfqENKgmYIt6Sma2OWQCv")

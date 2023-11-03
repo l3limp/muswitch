@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import os
 import ytm
 import spot
@@ -18,11 +18,16 @@ def createNew():
   
   if fromPlatform.lower() == 'ytm' or fromPlatform.lower() == 'youtube' or fromPlatform.lower() == 'youtubemusic':
     tracks = ytm.getTracks(oldPlaylistID)
-    print(tracks)
-    return spot.createPlaylist(tracks, newPlaylistName)
+    shareURL = spot.createPlaylist(tracks, newPlaylistName)
+    response = jsonify({'rez': shareURL})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
   else:
     tracks = spot.getTracks(oldPlaylistID)
-    return ytm.createPlaylist(tracks, newPlaylistName)
+    shareURL = ytm.createPlaylist(tracks, newPlaylistName)
+    response = jsonify({'rez': shareURL})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 HOST = os.environ.get('SERVER_HOST', 'localhost')
 app.run(host=HOST, port=8080)
