@@ -3,7 +3,13 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.oauth2 import SpotifyClientCredentials
 from urllib.parse import quote
+from dataclasses import dataclass
 
+
+@dataclass
+class Song:
+    artist: str
+    title: str
 
 os.environ["SPOTIPY_REDIRECT_URI"] = "http://localhost:8080"
 os.environ["SPOTIPY_CLIENT_ID"] = "c85c86b5bcd44d998917d4be40ffa6ac"
@@ -23,6 +29,7 @@ def createPlaylist(tracks, newPlaylistName):
     scope = "playlist-modify-public"
     creds = SpotifyOAuth(scope=scope, client_id="c85c86b5bcd44d998917d4be40ffa6ac", client_secret="b45bf7f7330c44c794c07879cf99a387", redirect_uri="http://localhost:8080")
     sp = spotipy.Spotify(auth_manager=creds)
+    spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
     user_id = sp.me()['id']
     created_playlist = sp.user_playlist_create(user_id, newPlaylistName)
     playlist_id = created_playlist['id']
@@ -30,6 +37,8 @@ def createPlaylist(tracks, newPlaylistName):
     uris = []
     for song in tracks:
         search_query = quote(f'{song.artist} {song.title}')
-        #isse use karke wo sp.search() vala kuch toh karna rehta hai, abhi man nahi kar raha karne ka, kal dekhta
+        tracks_found = spotify.search(search_query, limit=1, type='track')
+        if tracks_found:
+            uris.append(tracks_found['tracks']['items'][0]['uri']) 
     sp.playlist_add_items(playlist_id, uris)
     return share_link

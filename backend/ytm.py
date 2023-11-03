@@ -36,3 +36,5 @@ def createPlaylist(tracks, newPlaylistName):
           
   yt.add_playlist_items(playlistId, tracks)
   return f"https://www.youtube.com/playlist?list={playlistId}"
+
+# print(getTracks("PLgOz3T0yuNAdauvB1xdDXMGq9A5a_wmFw"))
