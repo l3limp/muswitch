@@ -18,6 +18,7 @@ def createNew():
   
   if fromPlatform.lower() == 'ytm' or fromPlatform.lower() == 'youtube' or fromPlatform.lower() == 'youtubemusic':
     tracks = ytm.getTracks(oldPlaylistID)
+    print(tracks)
     return spot.createPlaylist(tracks, newPlaylistName)
   else:
     tracks = spot.getTracks(oldPlaylistID)
