@@ -25,9 +25,10 @@ def createPlaylist(tracks, newPlaylistName):
     if(tracks_found): 
       temp = tracks_found[0]['videoId']
       print(temp)
+      # yt.add_playlist_items(playlistId, [temp])
       Ids.append(temp)
           
   yt.add_playlist_items(playlistId, Ids)
-  return f"https://www.youtube.com/playlist?list={playlistId}"
+  return f"https://music.youtube.com/playlist?list={playlistId}"
 
 # print(getTracks("PLgOz3T0yuNAdauvB1xdDXMGq9A5a_wmFw"))
