@@ -2,6 +2,7 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from spotipy.oauth2 import SpotifyClientCredentials
+from urllib.parse import quote
 
 
 os.environ["SPOTIPY_REDIRECT_URI"] = "http://localhost:8080"
@@ -26,5 +27,9 @@ def createPlaylist(tracks, newPlaylistName):
     created_playlist = sp.user_playlist_create(user_id, newPlaylistName)
     playlist_id = created_playlist['id']
     share_link = created_playlist['external_urls']['spotify']
-    sp.playlist_add_items(playlist_id, tracks)
+    uris = []
+    for song in tracks:
+        search_query = quote(f'{song.artist} {song.title}')
+        #isse use karke wo sp.search() vala kuch toh karna rehta hai, abhi man nahi kar raha karne ka, kal dekhta
+    sp.playlist_add_items(playlist_id, uris)
     return share_link
