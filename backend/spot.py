@@ -23,7 +23,7 @@ def createPlaylist(tracks, newPlaylistName):
     creds = SpotifyOAuth(scope=scope, client_id="c85c86b5bcd44d998917d4be40ffa6ac", client_secret="b45bf7f7330c44c794c07879cf99a387", redirect_uri="http://localhost:8080")
     sp = spotipy.Spotify(auth_manager=creds)
     user_id = sp.me()['id']
-    created_playlist = sp.user_playlist_create(user_id, "test_playlist_name")
+    created_playlist = sp.user_playlist_create(user_id, newPlaylistName)
     playlist_id = created_playlist['id']
     share_link = created_playlist['external_urls']['spotify']
     sp.playlist_add_items(playlist_id, tracks)
