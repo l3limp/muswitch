@@ -26,6 +26,17 @@
   color: #61dafb;
 }
 
+.Hor-Row {
+  padding-top: calc(1vmin + 20px);
+  padding-bottom: calc(1vmin + 40px);
+  min-width: 60vb;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
