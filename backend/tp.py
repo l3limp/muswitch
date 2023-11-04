@@ -2,9 +2,9 @@ import ytm
 import spot
 
 def go(oldPlaylistID):
-    tracks = spot.getTracks(oldPlaylistID)
-    shareURL = ytm.createPlaylist(tracks, "goated")
+    tracks = ytm.getTracks(oldPlaylistID)
+    shareURL = spot.createPlaylist(tracks, "goated")
     print(shareURL)
 
-go("2KfqENKgmYIt6Sma2OWQCv")
+go("PLk3-z5xiI6hgUR2MQdWtnsDafXUMH1UdT")
 

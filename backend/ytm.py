@@ -18,17 +18,14 @@ def getTracks(oldPlaylistId):
 def createPlaylist(tracks, newPlaylistName):
   playlistId = yt.create_playlist(newPlaylistName, '', 'PUBLIC')
   
-  Ids = []  
+  video_ids = []  
   for song in tracks:
     query = song.artist + song.title
     tracks_found = yt.search(query, limit=1, filter='songs')
-    if(tracks_found): 
-      temp = tracks_found[0]['videoId']
-      print(temp)
-      # yt.add_playlist_items(playlistId, [temp])
-      Ids.append(temp)
-          
-  yt.add_playlist_items(playlistId, Ids)
+    if(tracks_found):
+      if tracks_found[0]: 
+        song = tracks_found[0]['videoId']
+        video_ids.append(song)
+  video_ids = list(set(video_ids))
+  yt.add_playlist_items(playlistId, video_ids)
   return f"https://music.youtube.com/playlist?list={playlistId}"
-
-# print(getTracks("PLgOz3T0yuNAdauvB1xdDXMGq9A5a_wmFw"))
