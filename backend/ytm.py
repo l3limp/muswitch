@@ -20,7 +20,7 @@ def createPlaylist(tracks, newPlaylistName):
   
   video_ids = []  
   for song in tracks:
-    query = song.artist + song.title
+    query = song.title + song.artist 
     tracks_found = yt.search(query, limit=1, filter='songs')
     if(tracks_found):
       if tracks_found[0]: 

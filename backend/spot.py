@@ -33,11 +33,10 @@ def createPlaylist(tracks, newPlaylistName):
     share_link = created_playlist['external_urls']['spotify']
     uris = []
     for song in tracks:
-        search_query = quote(f'{song.artist} {song.title}')
-        tracks_found = spotify.search(search_query, limit=1, type='track')
+        # search_query = quote(f'{song.artist} {song.title}')
+        tracks_found = spotify.search(song.title + song.artist, limit=1, type='track')
         if tracks_found:
             if len(tracks_found['tracks']['items']) > 0:
                 uris.append(tracks_found['tracks']['items'][0]['uri']) 
-    uris = list(set(uris))
     sp.playlist_add_items(playlist_id, uris)
     return share_link

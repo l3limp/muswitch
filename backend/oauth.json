@@ -1,9 +1,8 @@
 {
- "access_token": "ya29.a0AfB_byB49oN3J9AIgCgZl6lSFUSlBC-cuGw3fgtimLelY2kLLhrUfGCHh9ITmJQq7JXStDfFe-9TCLWGKbvCHj9poR17A0TJ05gV4oYMyFF81YTWFjp6TXIRYQiGbpeob4LKfRmEA0fA1badkwh-4JFkkHb5WlfcFPfrGdvWCNR3qjppaCgYKAWMSARMSFQGOcNnCSU_sYOregQfKs2zv2nxBbw0183",
- "expires_in": 82337,
- "refresh_token": "1//0gg78a_5fMWMpCgYIARAAGBASNwF-L9IrjZTkm-45rNXzDglDq8n6Wc009uWBNN_KdnkLHMoWLiWKkodhFT9qUwYsT4s6P2Z0HQA",
+ "access_token": "ya29.a0AfB_byAI6D-weL0dy2JKc6dXqKCYq_ch8Nv0DooxmbRdBKQu4BH4cK-qNojzx4MPmfPdNv6G3fWZgPgqw0HR3vbHB-8AuGirK0XM96PZxZo-1Lf3AD_gOiI8Y9D_o-8Vxl-eatGmqZZf-RnVSn7fSUp034YUlb-pYc7zJzRcTIloHYPkaCgYKAdcSARMSFQGOcNnCVgRQlufb0tx0rOfRet1sAw0183",
+ "expires_in": 75385,
+ "refresh_token": "1//0gylL3LApMoeCCgYIARAAGBASNwF-L9IrGLKc0bZksa00tyCaUMxw-vY7P70bAo-UOquZmdFnWP4zIhbY2Vssrl8wXyNc9zSenbg",
  "scope": "https://www.googleapis.com/auth/youtube",
  "token_type": "Bearer",
- "expires_at": 1699168495,
- "filepath": "oauth.json"
+ "expires_at": 1699165319
 }
