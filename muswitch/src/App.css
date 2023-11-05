@@ -7,6 +7,10 @@
   pointer-events: none;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .Outer {
   display: flex;
   flex-direction: column;
@@ -16,17 +20,44 @@
   box-shadow: 1px 1px 1px 1px #c8c8c8;
 }
 .Banner {
-  background-color: antiquewhite;
+  background-color: #faebd7;
   min-height: 10vh;
   min-width: 100vb;
   border-top-right-radius: 12px;
 
   border-top-left-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Stepper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Stepper-Item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .Body {
   display: flex;
   flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+.circ {
+  align-self: center;
+  padding: 10vh;
+  
 }
 
 .Upper-Body {
@@ -47,7 +78,7 @@
 .Lower-L-Body {
   display: flex;
   flex-direction: row;
-  height:40px;
+  height: 40px;
   justify-content: space-between;
   padding-bottom: 20px;
   padding-right: 28px;

@@ -1,8 +1,9 @@
 {
- "access_token": "ya29.a0AfB_byAI6D-weL0dy2JKc6dXqKCYq_ch8Nv0DooxmbRdBKQu4BH4cK-qNojzx4MPmfPdNv6G3fWZgPgqw0HR3vbHB-8AuGirK0XM96PZxZo-1Lf3AD_gOiI8Y9D_o-8Vxl-eatGmqZZf-RnVSn7fSUp034YUlb-pYc7zJzRcTIloHYPkaCgYKAdcSARMSFQGOcNnCVgRQlufb0tx0rOfRet1sAw0183",
- "expires_in": 75385,
+ "access_token": "ya29.a0AfB_byCPtqXRQRZzKm5bgVNoX2Vf0T_F-kNPxW5r34He9mOKDse4MPzZBUzewsxYh1YJANhlw7_7abwQ2VhkooDrPpnGDv3s8GmTdlqx2wfYyRhlaAHDhO0EMEumVB7ipvGuTjftZVl2hJeibPVhCAAjrfgY-59w8J0-Tl2sQuAX-GLYaCgYKAV4SARMSFQGOcNnC_e-hhzQyyg4MWCouetmp4A0183",
+ "expires_in": 77313,
  "refresh_token": "1//0gylL3LApMoeCCgYIARAAGBASNwF-L9IrGLKc0bZksa00tyCaUMxw-vY7P70bAo-UOquZmdFnWP4zIhbY2Vssrl8wXyNc9zSenbg",
  "scope": "https://www.googleapis.com/auth/youtube",
  "token_type": "Bearer",
- "expires_at": 1699165319
+ "expires_at": 1699258181,
+ "filepath": "oauth.json"
 }
