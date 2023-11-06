@@ -4,11 +4,17 @@ from spotipy.oauth2 import SpotifyOAuth
 from spotipy.oauth2 import SpotifyClientCredentials
 from urllib.parse import quote
 import utils
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client_id = os.getenv("SPOTIPY_CLIENT_ID")
+client_secret = os.getenv("SPOTIPY_CLIENT_SECRET")
 
 
 os.environ["SPOTIPY_REDIRECT_URI"] = "http://localhost:8080"
-os.environ["SPOTIPY_CLIENT_ID"] = "0d708d2325a145acb74efd84b9809139"
-os.environ["SPOTIPY_CLIENT_SECRET"] = "614bfe52cdc44df880d4836d7d934800"
+os.environ["SPOTIPY_CLIENT_ID"] = client_id
+os.environ["SPOTIPY_CLIENT_SECRET"] = client_secret
 
 def getTracks(playlistID):
     uri = f"spotify:playlist:{playlistID}"
@@ -24,7 +30,7 @@ def getTracks(playlistID):
 
 def createPlaylist(tracks, newPlaylistName):
     scope = "playlist-modify-public"
-    creds = SpotifyOAuth(scope=scope, client_id="0d708d2325a145acb74efd84b9809139", client_secret="614bfe52cdc44df880d4836d7d934800", redirect_uri="http://localhost:8080")
+    creds = SpotifyOAuth(scope=scope, client_id=client_id, client_secret=client_secret, redirect_uri="http://localhost:8080")
     sp = spotipy.Spotify(auth_manager=creds)
     spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
     user_id = sp.me()['id']
