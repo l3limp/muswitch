@@ -1,6 +1,8 @@
 # Muswitch
 
-Converts a youtube music playlist to spotify playlist or vice-versa.
+Convert playlists between streaming platforms in seconds!
+
+Muswitch is a cross-platform playlist converter that allows you to easily transfer your playlists from one platform to another. This makes it perfect for those times when you want to listen to your favourite playlists on a different platform, but don't want to go through the hassle of manually recreating them
 
 ## Setup
 
@@ -12,7 +14,7 @@ Converts a youtube music playlist to spotify playlist or vice-versa.
 
 ### Setting Environment Variables
 
-1. Create a file called `.env` in the main folder.
+1. Create a file called `.env` in the main folder
 2. Edit the file by adding your credentials
 3. The structure of the `.env` file is given below
 
