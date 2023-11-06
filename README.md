@@ -23,6 +23,11 @@ SPOTIPY_CLIENT_ID = <your_spotify_client_id>
 SPOTIPY_CLIENT_SECRET = <your_spotify_client_secret>
 ```
 
+### YouTube Music
+
+1. Change the current directory to server
+2. Simply run "ytmusicapi oauth" and login to your google account
+
 ## Usage
 
 ```sh
