@@ -38,3 +38,11 @@ $ cd server
 $ python server.py
 ```
 
+
+
+https://github.com/l3limp/muswitch/assets/76170873/907ff8e1-2eb9-4434-b2d1-8b6f394a2e11
+
+
+
+
+
